@@ -1,6 +1,5 @@
 
 //// WIP ////
-//@author Elizabeth "Rosemary" Fortanely
 
 import java.awt.Canvas;
 import java.awt.Color;

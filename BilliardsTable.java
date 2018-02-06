@@ -108,7 +108,7 @@ public class BilliardsTable extends Engine {
 		}
 
 		/*
-		 * crucial things to remember about collisions!! 1. Object/object
+		 * crucial things to remember about collisions! 1. Object/object
 		 * collisions-push back your objects before computing the collision to
 		 * ensure they don't repeatedly render themselves as intersecting and
 		 * get stuck together. 2. Wall/objects collisions-for the wall

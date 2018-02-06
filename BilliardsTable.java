@@ -136,9 +136,8 @@ public class BilliardsTable extends Engine {
 
 			// lower velocity before updating position if exceeds max value
 			double velocityCap = 25;
-			if (this.vel.magnitudeOptimized() >= velocityCap * velocityCap)
-				this.vel = this.vel.unit().times(velocityCap);
-
+			this.vel.limit(velocityCap);
+			
 			// update position
 			pos = pos.plus(vel);
 

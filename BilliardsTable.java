@@ -40,6 +40,7 @@ public class BilliardsTable extends Engine {
 				balls.add(ball);
 			}
 		}
+		setSmooth(true);
 	}
 
 	@Override
@@ -53,7 +54,6 @@ public class BilliardsTable extends Engine {
 		g.setColor(new Color(0, 50, 0));
 		g.fillRect(0, 0, getWidth(), getHeight());
 		g.translate(getWidth() / 2, getHeight() / 2);
-		setSmooth(true);
 		g.setColor(Color.white);
 		for (CueBall ball : balls)
 			ball.render(g);

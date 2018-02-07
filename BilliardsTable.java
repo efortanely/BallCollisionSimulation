@@ -165,15 +165,15 @@ public class BilliardsTable extends Engine {
 		// assume this is ball A
 		private void computeCollision(CueBall ballB) {
 			Vector distanceBtoA = this.pos.minus(ballB.pos);
-			Vector negatedParallelVelA = this.vel.vectorProjectionOn2D(distanceBtoA);
-			Vector perpendicularVelA = this.vel.minus(negatedParallelVelA);
+			Vector parallelVelA = this.vel.vectorProjectionOn2D(distanceBtoA);
+			Vector perpendicularVelA = this.vel.minus(parallelVelA);
 
 			Vector distanceAtoB = ballB.pos.minus(this.pos);
-			Vector negatedParallelVelB = ballB.vel.vectorProjectionOn2D(distanceAtoB);
-			Vector perpendicularVelB = ballB.vel.minus(negatedParallelVelB);
+			Vector parallelVelB = ballB.vel.vectorProjectionOn2D(distanceAtoB);
+			Vector perpendicularVelB = ballB.vel.minus(parallelVelB);
 
-			ballB.vel = perpendicularVelB.plus(negatedParallelVelA);
-			this.vel = perpendicularVelA.plus(negatedParallelVelB);
+			ballB.vel = perpendicularVelB.plus(parallelVelA);
+			this.vel = perpendicularVelA.plus(parallelVelB);
 		}
 
 		public void render(Graphics2D g) {
